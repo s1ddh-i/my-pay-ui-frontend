@@ -1,0 +1,590 @@
+/* =========================
+   ROOT + RESET
+   -------------------------
+   Global CSS variables and
+   baseline reset styles
+   ========================= */
+
+:root {
+  /* Core color palette used across the app */
+  --bg: #0b0b14;
+  --panel: #141428;
+  --accent: #6a4bff;
+  --text: #f5f5f7;
+  --muted: #9aa0a6;
+}
+
+/* Apply consistent box sizing to all elements */
+* {
+  box-sizing: border-box;
+}
+
+/* Base document styling */
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+
+  /* Subtle radial gradient background for depth */
+  background: radial-gradient(circle at top, #141428, #08080f);
+  color: var(--text);
+}
+
+/* =========================
+   NAVBAR
+   -------------------------
+   Sticky top navigation bar
+   ========================= */
+
+.navbar {
+  /* Keeps navbar visible while scrolling */
+  position: sticky;
+  top: 0;
+  z-index: 10;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 1rem 2rem;
+
+  /* Semi-transparent glassmorphism effect */
+  background: rgba(10,10,20,0.85);
+  backdrop-filter: blur(12px);
+
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+/* Brand logo styling */
+.logo {
+  font-weight: 700;
+  color: var(--accent);
+}
+
+/* Navigation container */
+nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+/* Individual navigation link */
+.nav-link {
+  color: var(--muted);
+  cursor: pointer;
+}
+
+/* Active navigation state indicator */
+.nav-link.active {
+  color: white;
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 4px;
+}
+
+/* =========================
+   HERO
+   -------------------------
+   Top landing section with
+   background image and CTA
+   ========================= */
+
+.hero {
+  padding: 5rem 2rem;
+  position: relative;
+  overflow: hidden;
+
+  /* Gradient overlay + hero background image */
+  background:
+    linear-gradient(
+      to right,
+      rgba(11,11,20,0.95),
+      rgba(11,11,20,0.6),
+      rgba(11,11,20,0.2)
+    ),
+    url("./images/herobg.jpg");
+
+  background-size: cover;
+  background-position: center right;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+/* Main hero heading */
+.hero h1 {
+  font-size: 2.6rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Hero subtitle text */
+.hero p {
+  color: var(--muted);
+}
+
+/* Container for hero action buttons */
+.hero-actions {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+}
+
+/* Primary CTA button */
+.primary {
+  background: var(--accent);
+  border: none;
+  color: white;
+  padding: 0.9rem 1.8rem;
+  border-radius: 14px;
+  cursor: pointer;
+}
+
+/* Secondary CTA button */
+.secondary {
+  background: var(--panel);
+  border: 1px solid rgba(255,255,255,0.12);
+  color: var(--text);
+  padding: 0.9rem 1.8rem;
+  border-radius: 14px;
+  cursor: pointer;
+}
+
+/* =========================
+   TABS
+   -------------------------
+   Tab navigation for
+   feature sections
+   ========================= */
+
+.tabs {
+  margin: 3rem auto 1.5rem;
+  padding: 0.6rem;
+
+  display: flex;
+  gap: 0.6rem;
+  width: fit-content;
+
+  background: rgba(20,20,40,0.9);
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(10px);
+}
+
+/* Individual tab button */
+.tab {
+  border: none;
+  background: transparent;
+  color: var(--muted);
+
+  padding: 0.6rem 1.4rem;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 500;
+
+  cursor: pointer;
+}
+
+/* Active tab visual state */
+.tab.active {
+  background: var(--accent);
+  color: white;
+}
+
+/* Hide tab content by default */
+.tab-content {
+  display: none;
+}
+
+/* Show active tab content */
+.tab-content.active {
+  display: block;
+}
+
+/* Grid layout for tab actions */
+.tab-panel {
+  max-width: 900px;
+  margin: 1.5rem auto 0;
+  padding: 1.5rem;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+/* Individual action card inside tab */
+.action {
+  padding: 1.2rem;
+  border-radius: 14px;
+
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+
+  text-align: center;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+/* Hover feedback for action cards */
+.action:hover {
+  background: rgba(255,255,255,0.08);
+}
+
+/* =========================
+   CARD STACK (SCROLL)
+   -------------------------
+   Scroll-driven sticky
+   card animation section
+   ========================= */
+
+.card-stack-section {
+  /* Tall section to allow scroll-based animation */
+  height: 300vh;
+  position: relative;
+}
+
+.card-stack {
+  /* Keeps card stack fixed while scrolling */
+  position: sticky;
+  top: 15vh;
+
+  height: 70vh;
+  width: 90vw;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+}
+
+/* =========================
+  STACK CARD (FULL SIZE)
+  ------------------------
+  Individual stacked cards
+   ========================= */
+
+.stack-card {
+  position: absolute;
+
+  width: 100%;
+  height: 100%;
+
+  border-radius: 28px;
+  overflow: hidden;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  box-shadow: 0 40px 80px rgba(0,0,0,0.6);
+
+  display: flex;
+  align-items: flex-end;
+
+  /* Hidden initially, revealed on scroll */
+  opacity: 0;
+  transform: translateY(60px);
+
+  transition:
+    transform 0.4s ease,
+    opacity 0.4s ease;
+}
+
+/* =========================
+  CARD FOOTER (TAG + CTA)
+  ------------------------
+  Gradient overlay content
+   ========================= */
+
+.card-footer {
+  width: 100%;
+  height: 30%;
+  padding: 1.5rem 2rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.55),
+    rgba(0,0,0,0)
+  );
+}
+
+/* Label shown on card */
+.card-tag {
+  height: 60%;
+  width: 20%;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: white;
+  text-align: center;
+  background: rgba(0,0,0,0.5);
+  padding: 1.5rem 1rem;
+  border-radius: 999px;
+}
+
+/* Card action button */
+.card-action {
+  height: 60%;
+  width: 20%;
+  background: var(--accent);
+  color: white;
+  border: none;
+
+  padding: 0.7rem 1.6rem;
+  font-size: 1rem;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+/* Hover effect for card CTA */
+.card-action:hover {
+  opacity: 0.9;
+}
+
+/* =========================
+   CARD BACKGROUNDS
+   -------------------------
+   Individual images per card
+   ========================= */
+
+.card-1 {
+  background-image:
+    linear-gradient(
+      to top,
+      rgba(0,0,0,0.4),
+      rgba(0,0,0,0.1)
+    ),
+    url("./images/mobile-recharge.png");
+}
+
+.card-2 {
+  background-image:
+    linear-gradient(
+      to top,
+      rgba(0,0,0,0.4),
+      rgba(0,0,0,0.1)
+    ),
+    url("./images/electricity.jpg");
+}
+
+.card-3 {
+  background-image:
+    linear-gradient(
+      to top,
+      rgba(0,0,0,0.4),
+      rgba(0,0,0,0.1)
+    ),
+    url("./images/rent.jpg");
+}
+
+.card-4 {
+  background-image:
+    linear-gradient(
+      to top,
+      rgba(0,0,0,0.4),
+      rgba(0,0,0,0.1)
+    ),
+    url("./images/ticket.jpg");
+}
+
+/* =========================
+   NEXT SECTION
+   -------------------------
+   Feature explanation block
+   ========================= */
+
+.next-section {
+  padding: 8rem 3rem;
+  background: radial-gradient(
+    circle at top,
+    rgba(20,20,40,0.6),
+    rgba(5,5,10,1)
+  );
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.next-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+/* Section heading */
+.next-copy h2 {
+  font-size: 2.4rem;
+  margin-bottom: 1rem;
+}
+
+/* Section description */
+.next-copy p {
+  color: var(--muted);
+  max-width: 420px;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+/* Feature cards container */
+.next-features {
+  display: grid;
+  gap: 1.2rem;
+}
+
+/* Individual feature card */
+.feature-card {
+  padding: 1.6rem;
+  border-radius: 18px;
+
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+
+/* Hover interaction for feature card */
+.feature-card:hover {
+  background: rgba(255,255,255,0.08);
+  transform: translateY(-4px);
+}
+
+.feature-card h4 {
+  margin-bottom: 0.4rem;
+  font-size: 1.05rem;
+}
+
+.feature-card p {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+/* Responsive layout adjustment */
+@media (max-width: 900px) {
+  .next-inner {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================
+   FOOTER
+   -------------------------
+   Site footer and links
+   ========================= */
+
+.footer {
+  margin-top: 6rem;
+  padding: 3rem 2rem 2rem;
+  background: linear-gradient(180deg, #0a0a14, #05050a);
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-brand h3 {
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.footer-brand p {
+  color: var(--muted);
+  max-width: 260px;
+}
+
+.footer-links {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.footer-col a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.85rem;
+}
+
+.footer-col a:hover {
+  color: var(--accent);
+}
+
+.footer-bottom {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255,255,255,0.08);
+
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+/* =========================
+   RESPONSIVE
+   -------------------------
+   Mobile layout adjustments
+   ========================= */
+
+@media (max-width: 768px) {
+  .tabs {
+    flex-direction: column;
+    height: auto;
+    padding: 1rem 0;
+  }
+
+  .tab {
+    width: 80%;
+    margin: 0.5rem 0;
+  }
+
+  .footer-top {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-links {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+}
+
+/* =========================
+   ANIMATIONS
+   -------------------------
+   Scroll-based card entrance
+   ========================= */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Applied via JS when card enters viewport */
+.stack-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+/* Stagger animation timing for stacked cards */
+.stack-card.visible:nth-child(1) { animation-delay: 0.1s; }
+.stack-card.visible:nth-child(2) { animation-delay: 0.3s; }
+.stack-card.visible:nth-child(3) { animation-delay: 0.5s; }
+.stack-card.visible:nth-child(4) { animation-delay: 0.7s; }
+
+/* =========================
+   END OF FILE
+   ========================= */

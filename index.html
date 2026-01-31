@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Character encoding for proper text rendering -->
+  <meta charset="UTF-8" />
+
+  <!-- Makes layout responsive on mobile devices -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <!-- Page title shown in browser tab -->
+  <title>MyPay</title>
+
+  <!-- External stylesheet for layout, colors, animations -->
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+
+  <!-- ===================== NAVBAR ===================== -->
+  <!-- Top navigation bar with branding and main sections -->
+  <header class="navbar">
+
+    <!-- App logo / brand name -->
+    <div class="logo">MyPay</div>
+
+    <!-- Primary navigation links -->
+    <!-- Using spans since navigation may be JS-controlled -->
+    <nav>
+      <span class="nav-link active">Home</span>
+      <span class="nav-link">Payments</span>
+      <span class="nav-link">History</span>
+    </nav>
+
+  </header>
+
+  <!-- ===================== HERO SECTION ===================== -->
+  <!-- Main landing section with product message and CTAs -->
+  <section class="hero">
+
+    <!-- Left-aligned hero content -->
+    <div class="hero-left">
+
+      <!-- Main headline -->
+      <h1>Payments, but make it smooth</h1>
+
+      <!-- Supporting tagline -->
+      <p>Fast. Secure. Zero drama.</p>
+
+      <!-- Call-to-action buttons -->
+      <div class="hero-actions">
+        <button class="primary">Send Money</button>
+        <button class="secondary">Scan & Pay</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================== TABS ===================== -->
+  <!-- Tab buttons for switching between feature categories -->
+  <section class="tabs">
+
+    <!-- data-tab links button to its corresponding content section -->
+    <button class="tab active" data-tab="quick">Quick Actions</button>
+    <button class="tab" data-tab="smart">Smart & Scheduled</button>
+    <button class="tab" data-tab="insights">Insights</button>
+
+  </section>
+
+  <!-- ===================== TAB CONTENT: QUICK ===================== -->
+  <!-- Default active tab -->
+  <section class="tab-content active" id="quick">
+    <div class="tab-panel">
+      <div class="action">Send to Contact</div>
+      <div class="action">Scan QR</div>
+      <div class="action">Repeat Last Payment</div>
+    </div>
+  </section>
+
+  <!-- ===================== TAB CONTENT: SMART ===================== -->
+  <section class="tab-content" id="smart">
+    <div class="tab-panel">
+      <div class="action">Auto-pay Bills</div>
+      <div class="action">Rent Reminders</div>
+      <div class="action">Monthly Schedules</div>
+    </div>
+  </section>
+
+  <!-- ===================== TAB CONTENT: INSIGHTS ===================== -->
+  <section class="tab-content" id="insights">
+    <div class="tab-panel">
+      <div class="action">Spending Summary</div>
+      <div class="action">Payment History</div>
+      <div class="action">Download Statements</div>
+    </div>
+  </section>
+
+  <!-- ===================== CARD STACK ===================== -->
+  <!-- Visual stack of common payment use cases -->
+  <section class="card-stack-section">
+    <div class="card-stack">
+
+      <!-- Card 1: Mobile Recharge -->
+      <div class="stack-card card-1">
+        <div class="card-footer">
+          <span class="card-tag">Mobile Recharge</span>
+          <button class="card-action">Recharge</button>
+        </div>
+      </div>
+
+      <!-- Card 2: Electricity Bill -->
+      <div class="stack-card card-2">
+        <div class="card-footer">
+          <span class="card-tag">Electricity</span>
+          <button class="card-action">Pay Bill</button>
+        </div>
+      </div>
+
+      <!-- Card 3: Rent -->
+      <div class="stack-card card-3">
+        <div class="card-footer">
+          <span class="card-tag">Rent</span>
+          <button class="card-action">Pay Rent</button>
+        </div>
+      </div>
+
+      <!-- Card 4: Tickets -->
+      <div class="stack-card card-4">
+        <div class="card-footer">
+          <span class="card-tag">Tickets</span>
+          <button class="card-action">Book Now</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================== FEATURE SECTION ===================== -->
+  <!-- Explains product strengths and value proposition -->
+  <section class="next-section">
+    <div class="next-inner">
+
+      <!-- Left side: copy and CTA -->
+      <div class="next-copy">
+        <h2>Built for real-world payments</h2>
+        <p>
+          From daily recharges to monthly rent, MyPay is designed to stay fast,
+          reliable, and invisible when things matter most.
+        </p>
+        <button class="primary">Get Started</button>
+      </div>
+
+      <!-- Right side: feature highlights -->
+      <div class="next-features">
+
+        <div class="feature-card">
+          <h4>Secure by default</h4>
+          <p>End-to-end encryption with bank-grade security.</p>
+        </div>
+
+        <div class="feature-card">
+          <h4>Instant settlements</h4>
+          <p>No waiting, no retries, no awkward “did it go through?” moments.</p>
+        </div>
+
+        <div class="feature-card">
+          <h4>Full control</h4>
+          <p>Track, repeat, and automate payments on your terms.</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <!-- Site-wide footer with links and branding -->
+  <footer class="footer">
+
+    <!-- Top footer: brand and link groups -->
+    <div class="footer-top">
+
+      <div class="footer-brand">
+        <h3>MyPay</h3>
+        <p>Payments, but without the headache.</p>
+      </div>
+
+      <div class="footer-links">
+
+        <!-- Product links -->
+        <div class="footer-col">
+          <h4>Product</h4>
+          <a href="#">Payments</a>
+          <a href="#">Rewards</a>
+          <a href="#">Security</a>
+        </div>
+
+        <!-- Company links -->
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="#">About</a>
+          <a href="#">Careers</a>
+          <a href="#">Press</a>
+        </div>
+
+        <!-- Support links -->
+        <div class="footer-col">
+          <h4>Support</h4>
+          <a href="#">Help Center</a>
+          <a href="#">Contact</a>
+          <a href="#">Privacy</a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Bottom footer: legal + tagline -->
+    <div class="footer-bottom">
+      <span>© 2026 MyPay</span>
+      <span>Built by siddhi as a part of frontend learning</span>
+    </div>
+
+  </footer>
+
+  <!-- External JavaScript for interactions (tabs, animations, etc.) -->
+  <script src="script.js"></script>
+</body>
+</html>
