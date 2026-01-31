@@ -1,4 +1,4 @@
-e# MyPay – UI Frontend
+### MyPay – UI Frontend
 
 A modern fintech UI prototype inspired by real-world payment apps.  
 Built with a focus on smooth interactions, scroll-based storytelling, and clean visual hierarchy.
@@ -8,7 +8,7 @@ https://s1ddh-i.github.io/my-pay-ui-frontend/
 
 ---
 
-## ✨ Features
+### ✨ Features
 
 - Sticky navigation with clean visual hierarchy  
 - Hero section with layered gradient + imagery  
@@ -19,7 +19,7 @@ https://s1ddh-i.github.io/my-pay-ui-frontend/
 
 ---
 
-## 🧠 Design Approach
+### 🧠 Design Approach
 
 This project explores how **interaction-heavy sections** (like scroll-based cards) can coexist with
 **calm informational sections** without overwhelming the user.
